@@ -8,7 +8,7 @@ pipeline {
     }   
     stage("Clone Repo") {
         steps {
-            sh "git clone https://github.com/akiltipu/jenkins-aws-java-maven-app.git"
+            sh "git clone https://github.com/siba-x-prasad/jenkins-aws-java-maven-app-Swasi.git"
         }
     }
     stage("Build") {
