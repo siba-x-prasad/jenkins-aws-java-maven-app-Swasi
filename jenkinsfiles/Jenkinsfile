@@ -1,0 +1,29 @@
+pipeline {
+  agent any
+  stages {
+    stage("Clean Up - Jenkins Pipeline Branch1"){
+        steps {
+            deleteDir()
+        }
+    }   
+    stage("Clone Repo - Jenkins Pipeline Branch1") {
+        steps {
+            sh "git clone https://github.com/akiltipu/jenkins-aws-java-maven-app.git"
+        }
+    }
+    stage("Build - Jenkins Pipeline Branch1") {
+        steps {
+           dir("jenkins-aws-java-maven-app") {
+              sh "mvn clean install"
+           }
+        }
+    }
+    stage("Test - Jenkins Pipeline Branch1"){
+        steps {
+           dir("jenkins-aws-java-maven-app") {
+              sh "mvn test"
+           }
+        }
+    }
+  }
+}
