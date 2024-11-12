@@ -21,7 +21,7 @@ pipeline {
     stage("Test"){
         steps {
            dir("jenkins-aws-java-maven-app") {
-              sh "mvn test"
+              sh "mvn test after SCM POLL set 2 2 minutes"
            }
         }
     }
